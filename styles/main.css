@@ -1,4 +1,4 @@
-/* --- 1. Reset Selector (Instruction 3) --- */
+/* --- 1. Reset Selector --- */
 * {
     margin: 0;
     padding: 0;
@@ -10,22 +10,22 @@
     --accent-color: #800000;  /* Maroon accent color */
 }
 
-/* --- 2. Default Styles & Padding (Instructions 5, 6, 8) --- */
+/* --- 2. Default Styles & Padding --- */
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    width: 80%;                     /* Instruction 8 */
-    margin: auto;                   /* Instruction 8 */
-    border: 2px solid var(--accent-color); /* Instruction 8 */
+    width: 80%;                     
+    margin: auto;                   
+    border: 2px solid var(--accent-color); 
 }
 
-/* Default top/bottom padding of .5em for headings, p, and lists (Instruction 5) */
+/* Default top/bottom padding of .5em for headings, p, and lists */
 h1, h2, h3, p, ul {
     padding-top: .5em;
     padding-bottom: .5em;
 }
 
-/* Default left margin of 2em for lists (Instruction 6) */
+/* Default left margin of 2em for lists */
 ul {
     margin-left: 2em;
 }
@@ -45,14 +45,13 @@ h3 {
     font-size: 105%;
 }
 
-/* --- 3. Header Component (Instructions 9, 12, 16) --- */
+/* --- 3. Header Component --- */
 header {
-    /* 30-degree gradient from accent color down to white transitions (Instruction 16) */
     background: linear-gradient(30deg, #f6bb73 0%, #ffffff 30%, #ffffff 65%, #f6bb73 100%);
-    border-bottom: 2px solid var(--accent-color); /* Instruction 9 */
+    border-bottom: 2px solid var(--accent-color); 
 }
 
-/* Margins for the logo image (Instruction 12) */
+/* Margins for the logo image */
 header img {
     float: left;
     margin-top: .75em;
@@ -61,62 +60,61 @@ header img {
     margin-right: 1em;
 }
 
-/* Removed & nesting and deleted text-indent declarations per instruction 12 */
 header h2 {
     font-size: 175%;
-    padding-bottom: 0; /* Instruction 12 */
+    padding-bottom: 0; 
 }
 
 header h3 {
     font-size: 130%;
     font-style: italic;
-    padding-bottom: 1em; /* Instruction 12 */
+    padding-bottom: 1em; 
 }
 
-/* Clearfix utility to keep the floated header logo from spilling into main content */
+/* Clearfix utility to keep the floated header logo clean */
 header::after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* --- 4. Main Content Component (Instructions 10, 13, 15, 17) --- */
+/* --- 4. Main Content Component --- */
 main {
     clear: left;
-    padding-left: 1em;   /* Instruction 13 */
-    padding-right: 1em;  /* Instruction 13 */
-    padding-bottom: 1em; /* Instruction 13 */
+    padding-left: 1em;   
+    padding-right: 1em;  
+    padding-bottom: 1em; 
 }
 
-/* Top and bottom accent borders for main h1 (Instruction 10) */
+/* Top and bottom accent borders for all section headings */
 main h1 {
     border-top: 2px solid var(--accent-color);
     border-bottom: 2px solid var(--accent-color);
 }
 
-/* Italicized and indented blockquote typography rules (Instruction 15) */
+/* Italicized and indented blockquote typography rules */
 blockquote {
     font-style: italic;
     padding-left: 2em;
     padding-right: 2em;
 }
 
-/* 4px double border with rounded corners around speaker images (Instruction 17) */
+/* Double border with rounded corners around speaker images */
 main img {
     border: 4px double var(--accent-color);
     border-radius: 10px;
 }
 
-/* --- 5. Footer Component (Instructions 11, 14) --- */
+/* --- 5. Footer Component --- */
 footer {
-    background-color: var(--accent-color); /* Instruction 11 */
+    background-color: var(--accent-color); 
 }
 
 footer p {
     text-align: center;
-    color: white;       /* Instruction 11 */
-    padding-top: 1em;   /* Instruction 14 */
-    padding-bottom: 1em;/* Instruction 14 */
+    color: white;       
+    padding-top: 1em;   
+    padding-bottom: 1em;
 }
 
 /* Utility Helper Classes */
