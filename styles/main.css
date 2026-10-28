@@ -1,57 +1,125 @@
-/* custom property */
-:root {
-	--accent-color: #800000;  /* could also be coded #800 */
+/* --- 1. Reset Selector (Instruction 3) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* default styles */
-body {
-	font-family: Arial, Helvetica, sans-serif;
-    font-size: 100%;
+/* Custom Property */
+:root {
+    --accent-color: #800000;  /* Maroon accent color */
 }
-a:hover, a:focus{
-	font-style: italic;
-	color: var(--accent-color);
+
+/* --- 2. Default Styles & Padding (Instructions 5, 6, 8) --- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 80%;                     /* Instruction 8 */
+    margin: auto;                   /* Instruction 8 */
+    border: 2px solid var(--accent-color); /* Instruction 8 */
+}
+
+/* Default top/bottom padding of .5em for headings, p, and lists (Instruction 5) */
+h1, h2, h3, p, ul {
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+/* Default left margin of 2em for lists (Instruction 6) */
+ul {
+    margin-left: 2em;
+}
+
+a:hover, a:focus {
+    font-style: italic;
+    color: var(--accent-color);
 }
 h1 {
-	font-size: 150%;
+    font-size: 150%;
 }
 h2 {
-	font-size: 130%;
-	color: var(--accent-color);
+    font-size: 130%;
+    color: var(--accent-color);
 }
 h3 {
-	font-size: 105%;
+    font-size: 105%;
 }
 
-/* the styles for the header */
+/* --- 3. Header Component (Instructions 9, 12, 16) --- */
 header {
-	& h2 {
-		font-size: 175%;
-		text-indent: 30px;
-	}
-	& h3 {
-		font-size: 130%;
-		font-style: italic;
-		text-indent: 30px;
-	}
-	& img {
-		float: left;
-	}
+    /* 30-degree gradient from accent color down to white transitions (Instruction 16) */
+    background: linear-gradient(30deg, #f6bb73 0%, #ffffff 30%, #ffffff 65%, #f6bb73 100%);
+    border-bottom: 2px solid var(--accent-color); /* Instruction 9 */
 }
 
-/* the styles for the main content */
+/* Margins for the logo image (Instruction 12) */
+header img {
+    float: left;
+    margin-top: .75em;
+    margin-bottom: .75em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+/* Removed & nesting and deleted text-indent declarations per instruction 12 */
+header h2 {
+    font-size: 175%;
+    padding-bottom: 0; /* Instruction 12 */
+}
+
+header h3 {
+    font-size: 130%;
+    font-style: italic;
+    padding-bottom: 1em; /* Instruction 12 */
+}
+
+/* Clearfix utility to keep the floated header logo from spilling into main content */
+header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- 4. Main Content Component (Instructions 10, 13, 15, 17) --- */
 main {
-	clear: left;
+    clear: left;
+    padding-left: 1em;   /* Instruction 13 */
+    padding-right: 1em;  /* Instruction 13 */
+    padding-bottom: 1em; /* Instruction 13 */
 }
 
-/* the styles for the footer */
+/* Top and bottom accent borders for main h1 (Instruction 10) */
+main h1 {
+    border-top: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Italicized and indented blockquote typography rules (Instruction 15) */
+blockquote {
+    font-style: italic;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+/* 4px double border with rounded corners around speaker images (Instruction 17) */
+main img {
+    border: 4px double var(--accent-color);
+    border-radius: 10px;
+}
+
+/* --- 5. Footer Component (Instructions 11, 14) --- */
 footer {
-	& p {
-		text-align: center;
-	}
+    background-color: var(--accent-color); /* Instruction 11 */
 }
 
-/* CSS class */
+footer p {
+    text-align: center;
+    color: white;       /* Instruction 11 */
+    padding-top: 1em;   /* Instruction 14 */
+    padding-bottom: 1em;/* Instruction 14 */
+}
+
+/* Utility Helper Classes */
 .large {
-	font-size: 125%;
+    font-size: 125%;
 }
